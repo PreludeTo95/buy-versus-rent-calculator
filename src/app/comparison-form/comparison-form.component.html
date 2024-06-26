@@ -1,0 +1,28 @@
+<div class="comparison-form-container">
+    <form [formGroup]="pricingForm" class="pricingForm">
+
+        <div class="buying-prices">
+            <label for="buyPrice">Buy Price </label>
+            <input id="buyPrice" type="text" formControlName="buyPrice">
+            <br>
+            <label>Property Tax </label>
+            <input type="text" [disabled]="true" value="{{propertyTaxValue}}">
+            <br>
+            <label>Maintenance Cost </label>
+            <input type="text" [disabled]="true" value="{{maintenanceCostValue}}">
+            <br>
+            <label>Total Cost </label>
+            <input type="text" [disabled]="true" value="{{totalCostValue}}">
+        </div>
+
+        <div class="renting-prices">
+            <label for="buyPrice">Rent Price </label>
+            <input id="rentPrice" type="text" formControlName="rentPrice">
+        </div>
+    </form>
+
+    <div class="buttonContainer">
+        <button mat-flat-button class="compareButton" (click)="comparePricing()">Compare</button>
+    </div>
+    
+</div>

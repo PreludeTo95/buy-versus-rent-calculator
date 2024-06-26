@@ -1,0 +1,25 @@
+* {
+    background-color: rgb(88, 88, 88);
+    height: 100%;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+
+    h1 {
+        background-color: aquamarine;
+    }
+}
+
+.toolContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}

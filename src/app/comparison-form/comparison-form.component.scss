@@ -1,0 +1,48 @@
+.comparison-form-container {
+    background-color: lightgrey;
+    width: 500px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricingForm {
+    display: flex;
+}
+
+.buying-prices {
+    display: flex;
+    flex-direction: column;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    padding: 20px;
+    width: 50%;
+}
+
+.renting-prices {
+    display: flex;
+    flex-direction: column;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-left-width: 1px;
+    border-left-color: black;
+    border-left-style: solid;
+    padding: 20px;
+    width: 50%;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.compareButton {
+    width: 150px;
+    height: 50px;
+}

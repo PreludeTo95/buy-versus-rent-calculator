@@ -1,0 +1,59 @@
+.bar-chart-container {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    background-color: lightgrey;
+}
+
+.chart-column {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    
+    span {
+       font-size: 20px; 
+       padding-bottom: 10px;
+    }
+    
+}
+
+.chart-bar {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-bottom: none;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    .bar-label {
+        transform: translate(0px, 150%);
+        font-size: 20px;
+    }
+}
+
+.mortgage-bar {
+    background-color: aqua;
+}
+
+.rent-bar {
+    background-color: greenyellow;
+}
+
+.bar-labels {
+    height: 50px;
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-top: none;
+}
