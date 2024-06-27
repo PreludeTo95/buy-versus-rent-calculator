@@ -2,7 +2,7 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
 .comparison-form-container {
-    background-color: $white1;
+    background-color: $white2;
     width: 600px;
     border-width: 1px;
     border-color: $blue5;
@@ -10,6 +10,7 @@
     padding: 0px;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
 }
 
 .pricingForm {
@@ -26,7 +27,9 @@
     border-bottom-width: 1px;
     border-bottom-color: $blue5;
     border-bottom-style: solid;
-    padding: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     width: 50%;
 }
 
@@ -73,15 +76,26 @@ mat-error {
 }
 
 .userInputFields {
-    border-bottom-style: solid;
-    border-bottom-color: $blue5;
-    border-bottom-width: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .calculatedFields {
     padding-top: 20px;
+    border-top-style: solid;
+    border-top-color: $blue5;
+    border-top-width: 1px;
 }
 
 .pointer-events {
     pointer-events: auto;
+}
+
+.breakdownButton {
+    font-size: 12px;
+    width: 120px;
+    height: 50px;
+    margin-bottom: 20px;
+
 }

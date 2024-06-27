@@ -6,11 +6,12 @@
     border-style: solid;
     border-color: $blue5;
     width: 600px;
-    height: 500px;
+    height: 600px;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
-    background-color: $white1
+    background-color: $white2;
+    border-radius: 5px;
 }
 
 .chart-column {
@@ -38,25 +39,29 @@
     align-items: flex-end;
     justify-content: space-around;
 
-    .bar-label {
-        transform: translate(0px, 150%);
-        font-size: 20px;
-    }
 }
 
 #mortgage-bar {
-    background-color: $blue2;
+    background: rgb(53,53,53);
+    background: linear-gradient(0deg, $blue3 20%, $blue1 100%);
 }
 
 #rent-bar {
-    background-color: $blue4;
+    background: rgb(53,53,53);
+    background: linear-gradient(0deg, $blue5 20%, $blue4 100%);
 }
 
 .bar-labels {
     height: 50px;
-    background-color: $white1;
-    border-width: 1px;
-    border-style: solid;
-    border-color: $blue5;
-    border-top: none;
+    background-color: $white2;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    span {
+       font-size: 20px; 
+    }
+    
 }

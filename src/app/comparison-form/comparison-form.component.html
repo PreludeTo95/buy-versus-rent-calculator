@@ -30,9 +30,11 @@
                         <i class="fa-solid fa-circle-info pointer-events" matTooltip="Info about the action"> </i>
                     </mat-icon>
                 </mat-form-field>
+
+                <button mat-flat-button class="breakdownButton" (click)="toggleBreakdown()">Show Breakdown</button>
             </div>
 
-            <div class="calculatedFields">
+            <div class="calculatedFields" *ngIf="showBreakdown">
                 <mat-form-field>
                     <mat-label>Mortgage Payment</mat-label>
                     <input matInput type="number" formControlName="mortgagePayment">

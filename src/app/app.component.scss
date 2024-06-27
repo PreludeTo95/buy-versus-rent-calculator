@@ -2,22 +2,20 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
 * {
-    background-color: $blue5;
-    height: 100%;
+    
 }
 
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $blue1;
     width: 100%;
     height: 50px;
     padding-top: 20px;
-    color: $white1;
 
     h1 {
-        background-color: $blue1;
+        color: $white1;
+        font-weight: 500;
     }
 }
 
@@ -26,4 +24,10 @@
     justify-content: center;
     gap: 20px;
     margin-top: 50px;
+}
+
+.appContainer {
+    background: rgb(53,53,53);
+    background: linear-gradient(0deg, $black1 0%, $blue5 90%, $blue1 100%);
+    height: 100%;
 }

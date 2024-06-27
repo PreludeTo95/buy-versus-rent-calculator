@@ -31,6 +31,7 @@ export class ComparisonFormComponent {
 
   completedPricingForm: any = {};
   loanTerms: number[] = [10,15,20,25,30];
+  showBreakdown: boolean = false;
 
   @Output() 
   eventEmitter = new EventEmitter<{buyPrice: number, rentPrice: number}>();
@@ -57,5 +58,9 @@ export class ComparisonFormComponent {
       buyPrice: this.utilityService.getTotalMonthlyCost(),
       rentPrice: this.utilityService.getRentPrice()
     })
+  }
+
+  toggleBreakdown() {
+    this.showBreakdown = !this.showBreakdown;
   }
 }
