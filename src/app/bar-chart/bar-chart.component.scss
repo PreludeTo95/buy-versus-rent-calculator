@@ -1,13 +1,15 @@
+@import "../../styles.scss";
+
 .bar-chart-container {
     border-width: 1px;
     border-style: solid;
-    border-color: black;
-    width: 500px;
+    border-color: $blue5;
+    width: 600px;
     height: 500px;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
-    background-color: lightgrey;
+    background-color: $white1
 }
 
 .chart-column {
@@ -28,7 +30,7 @@
 .chart-bar {
     border-width: 1px;
     border-style: solid;
-    border-color: black;
+    border-color: $blue5;
     border-bottom: none;
     width: 100%;
     display: flex;
@@ -41,19 +43,19 @@
     }
 }
 
-.mortgage-bar {
-    background-color: aqua;
+#mortgage-bar {
+    background-color: $blue2;
 }
 
-.rent-bar {
-    background-color: greenyellow;
+#rent-bar {
+    background-color: $blue4;
 }
 
 .bar-labels {
     height: 50px;
-    background-color: white;
+    background-color: $white1;
     border-width: 1px;
     border-style: solid;
-    border-color: black;
+    border-color: $blue5;
     border-top: none;
 }

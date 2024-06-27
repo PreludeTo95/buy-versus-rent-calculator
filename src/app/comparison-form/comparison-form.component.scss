@@ -1,8 +1,10 @@
+@import "../../styles.scss";
+
 .comparison-form-container {
-    background-color: lightgrey;
-    width: 500px;
+    background-color: $white1;
+    width: 600px;
     border-width: 1px;
-    border-color: black;
+    border-color: $blue5;
     border-style: solid;
     padding: 0px;
     display: flex;
@@ -11,15 +13,19 @@
 
 .pricingForm {
     display: flex;
+
+    mat-form-field {
+        width: 100%;
+    }
 }
 
 .buying-prices {
     display: flex;
     flex-direction: column;
     border-bottom-width: 1px;
-    border-bottom-color: black;
+    border-bottom-color: $blue5;
     border-bottom-style: solid;
-    padding: 20px;
+    padding: 30px;
     width: 50%;
 }
 
@@ -27,12 +33,12 @@
     display: flex;
     flex-direction: column;
     border-bottom-width: 1px;
-    border-bottom-color: black;
+    border-bottom-color: $blue5;
     border-bottom-style: solid;
     border-left-width: 1px;
-    border-left-color: black;
+    border-left-color: $blue5;
     border-left-style: solid;
-    padding: 20px;
+    padding: 30px;
     width: 50%;
 }
 
@@ -45,4 +51,32 @@
 .compareButton {
     width: 150px;
     height: 50px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+mat-error {
+    color: red;
+}
+
+.userInputFields {
+    border-bottom-style: solid;
+    border-bottom-color: $blue5;
+    border-bottom-width: 1px;
+}
+
+.calculatedFields {
+    padding-top: 20px;
 }

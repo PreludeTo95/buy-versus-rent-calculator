@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
   selector: 'app-bar-chart',
@@ -8,13 +8,40 @@ import { Component } from '@angular/core';
 
 export class BarChartComponent {
 
-  buyPrice: number = 50;
-  rentPrice: number = 70;
+  buyPrice: number;
+  rentPrice: number;
 
-  buyBarHeight: string = '50%';
-  rentBarHeight: string = '70%';
+  buyBarHeight: string = '200px';
+  rentBarHeight: string = '200px';
 
-  calculateChartBars() {
-    
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+  ) {}
+
+  calculateChartBars(buyPrice: number, rentPrice: number) {
+    this.buyPrice = buyPrice;
+    this.rentPrice = rentPrice;
+    let relativeSize: number;
+
+    if (this.buyPrice > this.rentPrice) {
+      this.rentBarHeight = '200px';
+      relativeSize = (this.buyPrice / this.rentPrice) * 200;
+      this.buyBarHeight = relativeSize.toFixed(0) + 'px';
+    } 
+    else if (this.buyPrice < this.rentPrice) {
+      this.buyBarHeight = '200px';
+      relativeSize = (this.rentPrice / this.buyPrice) * 200;
+      this.rentBarHeight = relativeSize.toFixed(0) + 'px';
+    } 
+    else if (this.buyPrice == this.rentPrice) {
+      this.rentBarHeight = '200px';
+      this.buyBarHeight = '200px';
+    }
+
+  document.getElementById('mortgage-bar').style.height = this.buyBarHeight;
+  document.getElementById('rent-bar').style.height = this.rentBarHeight;
+
+  this.changeDetectorRef.detectChanges();
+  
   }
 }

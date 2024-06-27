@@ -2,27 +2,74 @@
     <form [formGroup]="pricingForm" class="pricingForm">
 
         <div class="buying-prices">
-            <label for="buyPrice">Buy Price </label>
-            <input id="buyPrice" type="text" formControlName="buyPrice">
-            <br>
-            <label>Property Tax </label>
-            <input type="text" [disabled]="true" value="{{propertyTaxValue}}">
-            <br>
-            <label>Maintenance Cost </label>
-            <input type="text" [disabled]="true" value="{{maintenanceCostValue}}">
-            <br>
-            <label>Total Cost </label>
-            <input type="text" [disabled]="true" value="{{totalCostValue}}">
+            <div class="userInputFields">
+                <mat-form-field [hideRequiredMarker]="true">
+                    <mat-label>Buy Price</mat-label>
+                    <input matInput type="number" formControlName="buyPrice" placeholder="250000" (focus)="showPrefix=true">
+                    <mat-error>Required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field [hideRequiredMarker]="true">
+                    <mat-label>Down Payment</mat-label>
+                    <input matInput type="number" formControlName="downPayment"  placeholder="20000">
+                    <mat-error>Required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field [hideRequiredMarker]="true">
+                    <mat-label>Loan Interest Rate</mat-label>
+                    <input matInput type="number" formControlName="loanInterestRate"  placeholder="5">
+                    <mat-error>Required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Loan Term</mat-label>
+                    <mat-select formControlName="loanTerm">
+                        <mat-option *ngFor="let term of loanTerms" [value]="term">{{term}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="calculatedFields">
+                <mat-form-field>
+                    <mat-label>Mortgage Payment</mat-label>
+                    <input matInput type="number" formControlName="mortgagePayment">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Property Tax</mat-label>
+                    <input matInput type="number" formControlName="propertyTaxValue">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Maintenance Cost</mat-label>
+                    <input matInput type="number" formControlName="maintenanceCostValue">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>PMI</mat-label>
+                    <input matInput type="number" formControlName="privateMortgageInsurance">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Total Monthly Cost</mat-label>
+                    <input matInput type="number" formControlName="totalCostValue">
+                </mat-form-field>
+            </div>
         </div>
 
         <div class="renting-prices">
-            <label for="buyPrice">Rent Price </label>
-            <input id="rentPrice" type="text" formControlName="rentPrice">
+
+            <mat-form-field [hideRequiredMarker]="true">
+                <mat-label>Rent Price</mat-label>
+                <input matInput type="number" formControlName="rentPrice">
+                <mat-error>Required</mat-error>
+            </mat-form-field>
+
         </div>
     </form>
 
     <div class="buttonContainer">
-        <button mat-flat-button class="compareButton" (click)="comparePricing()">Compare</button>
+        <button mat-flat-button class="compareButton" (click)="comparePricing()" >Compare</button>
     </div>
     
 </div>

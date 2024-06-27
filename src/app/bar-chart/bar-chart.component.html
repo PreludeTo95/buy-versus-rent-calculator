@@ -1,16 +1,15 @@
 <div class="bar-chart-container">
 
     <div class="chart-column">
-        <span class="chart-price">${{buyPrice}}</span>
-        <div class="chart-bar mortgage-bar" [ngStyle]="{ 'height': buyBarHeight }">
+        <span *ngIf="buyPrice" class="chart-price">${{buyPrice}}</span>
+        <div class="chart-bar" id="mortgage-bar" [ngStyle]="{ 'height': buyBarHeight }">
             <span class="bar-label">Buy</span>
         </div>
     </div>
 
     <div class="chart-column">
-        <span class="chart-price">${{rentPrice}}</span>
-        <div class="chart-bar rent-bar" [ngStyle]="{ 'height': rentBarHeight }">
-
+        <span *ngIf="rentPrice" class="chart-price">${{rentPrice}}</span>
+        <div class="chart-bar" id="rent-bar" [ngStyle]="{ 'height': rentBarHeight }">
             <span class="bar-label">Rent</span>
         </div>
     </div>
