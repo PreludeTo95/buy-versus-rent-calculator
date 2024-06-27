@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,7 @@ export class AppComponent {
   title = 'buy-versus-rent-calculator';
   
   constructor(
-    public barChartComponent: BarChartComponent,
+
   ) {}
 
 }

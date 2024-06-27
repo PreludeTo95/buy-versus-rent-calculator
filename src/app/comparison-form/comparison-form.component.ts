@@ -20,7 +20,10 @@ export class ComparisonFormComponent {
     propertyTax: new FormControl({value:0, disabled: true}),
     maintenanceCost: new FormControl({value:0, disabled: true}),
     privateMortgageInsurance: new FormControl({value: 0, disabled: true}),
-    //homeInsurance: new FormControl({value: 0, disabled: true}),
+    homeInsurance: new FormControl({value: 0, disabled: true}),
+    opportunityCost: new FormControl({value: 0, disabled: true}),
+    equity: new FormControl({value: 0, disabled: true}),
+    appreciation: new FormControl({value: 0, disabled: true}),
     totalMonthlyCost: new FormControl({value:0, disabled: true}),
 
     rentPrice: new FormControl(null, {validators: [Validators.required]}),
@@ -44,6 +47,10 @@ export class ComparisonFormComponent {
     this.pricingForm.controls.propertyTax.setValue(this.utilityService.getPropertyTax());
     this.pricingForm.controls.maintenanceCost.setValue(this.utilityService.getMaintenanceCost());
     this.pricingForm.controls.privateMortgageInsurance.setValue(this.utilityService.getPrivateMortgageInsurance());
+    this.pricingForm.controls.homeInsurance.setValue(this.utilityService.getHomeInsurance());
+    this.pricingForm.controls.opportunityCost.setValue(this.utilityService.getOpportunityCost());
+    this.pricingForm.controls.equity.setValue(this.utilityService.getEquity());
+    this.pricingForm.controls.appreciation.setValue(this.utilityService.getAppreciation());
     this.pricingForm.controls.totalMonthlyCost.setValue(this.utilityService.getTotalMonthlyCost());
 
     this.eventEmitter.emit({

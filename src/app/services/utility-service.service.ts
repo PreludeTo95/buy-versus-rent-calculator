@@ -16,13 +16,19 @@ export class UtilityServiceService {
   propertyTax: number;
   maintenanceCost: number;
   privateMortgageInsurance: number;
+  homeInsurance: number;
+  opportunityCost: number;
+  equity: number;
+  appreciation: number;
   totalMonthlyCost: number;
 
   //property tax charged as 1% of property value
-  propertyTaxRate: number = 0.01 / 12;
+  propertyTaxRate: number = 0.009 / 12;
 
   //repairs costing 1% of property value per year
-  maintenanceCostRate: number = 0.01 / 12;
+  maintenanceCostRate: number = 0.015 / 12;
+
+  homeInsuranceRate: number = 0.008 / 12;
 
   constructor() { }
 
@@ -98,6 +104,38 @@ export class UtilityServiceService {
     this.privateMortgageInsurance = privateMortgageInsurance;
   }
 
+  getHomeInsurance() {
+    return this.homeInsurance;
+  }
+
+  setHomeInsurance(homeInsurance: number) {
+    this.homeInsurance = homeInsurance;
+  }
+
+  getOpportunityCost() {
+    return this.opportunityCost;
+  }
+
+  setOpportunityCost(opportunityCost: number) {
+    this.opportunityCost = opportunityCost;
+  }
+
+  getEquity() {
+    return this.equity;
+  }
+
+  setEquity(equity: number) {
+    this.equity = equity;
+  }
+
+  getAppreciation() {
+    return this.appreciation;
+  }
+
+  setAppreciation(appreciation: number) {
+    this.appreciation = appreciation;
+  }
+
   getTotalMonthlyCost() {
     return this.totalMonthlyCost;
   }
@@ -118,9 +156,21 @@ export class UtilityServiceService {
     let numberOfPayments: number = this.loanTerm * 12;
     this.mortgagePayment = Math.round(principalAmount * (monthlyLoanInterestRate * ((1 + monthlyLoanInterestRate) ** numberOfPayments)) / (((1 + monthlyLoanInterestRate) ** numberOfPayments) - 1));
 
-    this.propertyTax = Math.round((this.buyPrice * this.propertyTaxRate) / 12);
-    this.maintenanceCost = Math.round((pricingForm.buyPrice * this.maintenanceCostRate) / 12);
-    this.privateMortgageInsurance = Math.round(200);
-    this.totalMonthlyCost = Math.round(this.mortgagePayment + this.propertyTax + this.maintenanceCost + this.privateMortgageInsurance);
+    this.propertyTax = Math.round((this.buyPrice * this.propertyTaxRate));
+    this.maintenanceCost = Math.round((pricingForm.buyPrice * this.maintenanceCostRate));
+    
+    if ((this.downPayment / this.buyPrice) <= 0.2) {
+      this.privateMortgageInsurance = Math.round((principalAmount * 0.0125)/12);
+    } else {
+      this.privateMortgageInsurance = 0;
+    }
+
+    this.homeInsurance = Math.round(this.homeInsuranceRate * this.buyPrice);
+    this.opportunityCost = Math.round((this.downPayment * 0.06) / 12);
+
+    this.equity = Math.round((0.012 * principalAmount) / 12) * -1;
+    this.appreciation = Math.round((0.01 * this.buyPrice) / 12) * -1;
+
+    this.totalMonthlyCost = Math.round(this.mortgagePayment + this.propertyTax + this.maintenanceCost + this.privateMortgageInsurance + this.equity + this.appreciation + this.opportunityCost);
   }
 }

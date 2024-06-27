@@ -19,9 +19,9 @@ export class BarChartComponent {
     private utilityService: UtilityServiceService,
   ) {}
 
-  calculateChartBars() {
-    this.buyPrice = this.utilityService.getBuyPrice();
-    this.rentPrice = this.utilityService.getRentPrice();
+  calculateChartBars(buyPrice: number, rentPrice: number) {
+    this.buyPrice = buyPrice;
+    this.rentPrice = rentPrice;
     let relativeSize: number;
 
     if (this.buyPrice > this.rentPrice) {

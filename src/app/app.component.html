@@ -5,8 +5,8 @@
     </div>
 
     <div class="toolContainer">
-        <app-comparison-form (emitter)="barChartComponent.calculateChartBars()"></app-comparison-form>
-        <app-bar-chart></app-bar-chart>
+        <app-comparison-form (eventEmitter)="barChart.calculateChartBars($event.buyPrice, $event.rentPrice)"></app-comparison-form>
+        <app-bar-chart #barChart></app-bar-chart>
     </div>
     
 </div>

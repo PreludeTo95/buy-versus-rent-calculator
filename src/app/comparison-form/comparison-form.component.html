@@ -5,7 +5,7 @@
             <div class="userInputFields">
                 <mat-form-field [hideRequiredMarker]="true">
                     <mat-label>Buy Price</mat-label>
-                    <input matInput type="number" formControlName="buyPrice" placeholder="250000">
+                    <input matInput type="number" formControlName="buyPrice" placeholder="250000" matTooltip="Info about the action">
                     <mat-error>Required</mat-error>
                 </mat-form-field>
 
@@ -26,6 +26,9 @@
                     <mat-select formControlName="loanTerm">
                         <mat-option *ngFor="let term of loanTerms" [value]="term">{{term}}</mat-option>
                     </mat-select>
+                    <mat-icon matSuffix>
+                        <i class="fa-solid fa-circle-info pointer-events" matTooltip="Info about the action"> </i>
+                    </mat-icon>
                 </mat-form-field>
             </div>
 
@@ -43,11 +46,43 @@
                 <mat-form-field>
                     <mat-label>Maintenance Cost</mat-label>
                     <input matInput type="number" formControlName="maintenanceCost">
+                    <mat-icon matSuffix>
+                        <i class="fa-solid fa-circle-info"></i>
+                    </mat-icon>
                 </mat-form-field>
 
                 <mat-form-field>
                     <mat-label>PMI</mat-label>
                     <input matInput type="number" formControlName="privateMortgageInsurance">
+                    <mat-icon matSuffix>
+                        <i class="fa-solid fa-circle-info"></i>
+                    </mat-icon>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Home Insurance</mat-label>
+                    <input matInput type="number" formControlName="homeInsurance">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Opportunity Cost</mat-label>
+                    <input matInput type="number" formControlName="opportunityCost">
+                    <mat-icon matSuffix>
+                        <i class="fa-solid fa-circle-info"></i>
+                    </mat-icon>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Equity</mat-label>
+                    <input matInput type="number" formControlName="equity">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Property Appreciation</mat-label>
+                    <input matInput type="number" formControlName="appreciation">
+                    <mat-icon matSuffix>
+                        <i class="fa-solid fa-circle-info"></i>
+                    </mat-icon>
                 </mat-form-field>
 
                 <mat-form-field>
