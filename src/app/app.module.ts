@@ -32,7 +32,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule
   ],
   providers: [
-    BarChartComponent
+    
   ],
   bootstrap: [
     AppComponent

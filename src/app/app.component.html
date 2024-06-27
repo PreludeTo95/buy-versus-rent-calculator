@@ -5,7 +5,7 @@
     </div>
 
     <div class="toolContainer">
-        <app-comparison-form></app-comparison-form>
+        <app-comparison-form (emitter)="barChartComponent.calculateChartBars()"></app-comparison-form>
         <app-bar-chart></app-bar-chart>
     </div>
     
